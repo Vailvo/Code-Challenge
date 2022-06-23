@@ -14,18 +14,30 @@ const AllTripsComponent = () => {
   const [trips, setTrips] = useState<tripProps[]>([]);
   // const { id } = useParams();
   // updating current trips with the use of setTrips
-  // const handleDelete = (id: number) => {
-  //   const filteredTrips = trips.filter((trip) => trip.id !== id);
-  //   setTrips(filteredTrips);
-  //   // setTrips is a function itself and updates trips
-  // };
+  const handleDelete = (id: number) => {
+    var error = null;
+    axios
+      .delete("http://localhost:3000/trips/" + id)
+      .then((res) => {})
+
+      .catch((err) => {
+        error = err;
+        console.log(err);
+      });
+    if (error) {
+      const filteredTrips = trips.filter((trip) => trip.id !== id);
+      setTrips(filteredTrips);
+    }
+
+    // setTrips is a function itself and updates trips
+  };
 
   useEffect(() => {
     axios
       .get("http://localhost:3000/trips")
       .then((res) => {
         console.log("all Trips retrieved:", res.data);
-        setTrips(res.data.results);
+        setTrips(res.data.trips);
       })
 
       .catch((err) => console.log(err));
@@ -34,22 +46,22 @@ const AllTripsComponent = () => {
   //map creates a new array of trips
   return (
     <>
-      {trips.map((trip, tripId) => {
+      {console.log("trips inside of return", trips)}
+      <h1>All Trips: </h1>
+      {trips?.map((trip, tripId) => {
         console.log(trip);
         return (
           <>
-            <Trip
-              key={tripId}
-              id={trip.id}
-              title={trip.title}
-              date={trip.date}
-              desc={trip.desc}
-              destination={trip.destination}
-              publisher={trip.publisher}
-            />
+            <ul key={tripId}>
+              <li>{trip.title}</li>
+              <li>{trip.date.toString()}</li>
+              <li>{trip.desc}</li>
+              <li>{trip.destination}</li>
+              <li>{trip.publisher}</li>
+            </ul>
 
             <br />
-            {/* <button onClick={() => handleDelete(trip.id)}>Delete</button> */}
+            <button onClick={() => handleDelete(trip.id)}>Delete</button>
           </>
         );
       })}

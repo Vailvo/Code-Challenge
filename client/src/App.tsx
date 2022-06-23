@@ -6,7 +6,6 @@ import AllTripsComponent from "./components/AllTrips.component";
 function App() {
   return (
     <>
-      <h1>iefbhiogbiuer</h1>
       <AllTripsComponent />
     </>
   );
