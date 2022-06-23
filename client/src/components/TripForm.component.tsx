@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { tripDestinations } from "../api/TripsDB";
+// import { trips, tripOptions } from "../api/TripsDB";
 import { Link } from "react-router-dom";
 import ReactDOM from "react-dom/client";
-import { FieldText, Form, FormRow, DatePicker, Select } from "Form";
+// import { FieldText, Form, FormRow, DatePicker, Select } from "@elastic/eui";
 import moment from "moment";
 
 type propTypes = {
@@ -50,7 +50,7 @@ const TripForm = ({
 
   return (
     <>
-      <Form>
+      {/* <Form>
         <FormRow label="Title" style={bottomPadding}>
           <FieldText
             onChange={(event: any) => setTitle(event.target.value)}
@@ -66,7 +66,7 @@ const TripForm = ({
             shadow={false}
           />
         </FormRow>
-        <FormRow label="Body" style={bottomPadding}>
+        <FormRow label="Desc" style={bottomPadding}>
           <FieldText
             onChange={(e: any) => handleDescChange(e.target.value)}
             value={desc}
@@ -74,18 +74,18 @@ const TripForm = ({
         </FormRow>
         <FormRow label="Destination" style={bottomPadding}>
           <Select
-            options={tripDestinations}
-            value={tripDestinations}
+            options={destination}
+            value={destination}
             onChange={(e: any) => setDestination(e.target.value)}
           />
         </FormRow>
-        <FormRow label="Author" style={bottomPadding}>
+        <FormRow label="Publisher" style={bottomPadding}>
           <FieldText
             onChange={(e: any) => setPublisher(e.target.value)}
             value={publisher}
           />
         </FormRow>
-      </Form>
+      </Form> */}
       <Link to={"/"}>Back</Link>
     </>
   );

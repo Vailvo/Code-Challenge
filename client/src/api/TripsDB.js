@@ -1,6 +1,6 @@
 import moment from "moment";
 
-export const trips = [
+export const tripOptions = [
   {
     id: 1,
     date: moment(),
@@ -30,7 +30,7 @@ export const trips = [
   },
 ];
 
-export const tripDestinations = [
+export const trips = [
   {
     text: "Jamaica",
     value: "Jamaica",
@@ -52,5 +52,3 @@ export const tripDestinations = [
     value: "Italy",
   },
 ];
-
-export default trips;

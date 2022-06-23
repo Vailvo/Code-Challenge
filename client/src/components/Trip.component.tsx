@@ -1,16 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { tripProps } from "./Types";
 
-//lexical
-import { $getRoot, $getSelection } from "lexical";
-import { useEffect } from "react";
-// import LexicalComposer from "@lexical/react/LexicalComposer";
-// import LexicalPlainTextPlugin from "@lexical/react/LexicalPlainTextPlugin";
-// import LexicalContentEditable from "@lexical/react/LexicalContentEditable";
-// import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
-// import LexicalOnChangePlugin from "@lexical/react/LexicalOnChangePlugin";
-// import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-
 const Trip = ({ id, date, title, desc, destination, publisher }: tripProps) => {
   const params = useParams();
 
