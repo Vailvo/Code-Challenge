@@ -1,8 +1,8 @@
 import Trip from "./Trip.component";
-import { Link, useParams } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { tripProps } from "./Types";
-import { trips, tripOptions } from "../api/TripsDB";
+
 import axios from "axios";
 
 const AllTripsComponent = () => {
@@ -34,7 +34,6 @@ const AllTripsComponent = () => {
   //map creates a new array of trips
   return (
     <>
-      <h1>idubvuikjvedbsuijk</h1>
       {trips.map((trip, tripId) => {
         console.log(trip);
         return (
@@ -56,7 +55,7 @@ const AllTripsComponent = () => {
       })}
 
       <br />
-      <Link to={`create`}>Create a New Trip</Link>
+      {/* <Link to={`create`}>Create a New Trip</Link> */}
     </>
   );
 };
